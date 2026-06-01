@@ -3,93 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HerStyle - Fashion & Accessories</title>
 
-<meta name="description" content="HerStyle - Trending fashion, beauty, accessories, handbags, footwear and more for women.">
-<meta name="keywords" content="fashion, accessories, handbags, beauty, womens fashion, herstyle">
+<title>HerStyle | Premium Fashion Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Poppins;
-background:#0f0f13;
-color:white;
 }
 
+body{
+background:#0b0b10;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAV */
 header{
-position:sticky;
+position:fixed;
 top:0;
-background:#111;
-padding:15px 8%;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px 8%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:700;
-color:#ff4fb3;
+background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 nav a{
 color:white;
-margin-left:15px;
 text-decoration:none;
+margin-left:18px;
 font-size:14px;
+opacity:0.8;
 }
 
+nav a:hover{
+opacity:1;
+color:#ff4fb3;
+}
+
+/* HERO */
 .hero{
-padding:90px 8%;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+padding:0 20px;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-size:48px;
+font-size:60px;
+line-height:1.1;
+}
+
+.hero span{
+color:#ff4fb3;
+}
+
+.hero p{
+margin-top:15px;
+color:#ccc;
 }
 
 .btn{
-padding:12px 25px;
-background:#ff4fb3;
-color:white;
-border-radius:25px;
-text-decoration:none;
 display:inline-block;
-margin-top:15px;
+margin-top:25px;
+padding:14px 30px;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
-.section{
-padding:60px 8%;
+.btn:hover{
+transform:scale(1.05);
 }
 
+/* SECTIONS */
+section{
+padding:80px 8%;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+}
+
+.title span{
+color:#ff4fb3;
+}
+
+/* CATEGORY */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
 .card{
-background:#1c1c25;
+background:#151520;
 padding:20px;
 border-radius:15px;
-transition:.3s;
+text-align:center;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-8px);
+border-color:#ff4fb3;
 }
 
+/* PRODUCT */
 .product img{
 width:100%;
-border-radius:10px;
-height:250px;
+height:260px;
 object-fit:cover;
+border-radius:10px;
 }
 
 .price{
@@ -100,26 +154,34 @@ margin:10px 0;
 
 .buy{
 display:block;
-background:#ff4fb3;
 padding:10px;
 text-align:center;
-border-radius:10px;
+background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
 color:white;
 text-decoration:none;
+border-radius:10px;
 }
 
+/* FLOAT CTA */
+.cta{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff4fb3;
+padding:15px 18px;
+border-radius:50px;
+box-shadow:0 10px 30px rgba(255,79,179,0.4);
+font-size:14px;
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:30px;
 background:#000;
-color:#aaa;
+color:#777;
 font-size:13px;
 }
-
-small{
-color:#aaa;
-}
-
 </style>
 </head>
 
@@ -128,22 +190,25 @@ color:#aaa;
 <header>
 <div class="logo">HerStyle</div>
 <nav>
-<a href="#">Home</a>
+<a href="#home">Home</a>
 <a href="#categories">Categories</a>
 <a href="#products">Trending</a>
-<a href="#blog">Blog</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
-<section class="hero">
-<h1>Everything She Needs From Head To Toe</h1>
+<!-- HERO -->
+<section class="hero" id="home">
+<div>
+<h1>Style That Defines <span>You</span></h1>
 <p>Fashion • Beauty • Accessories • Lifestyle</p>
-<a class="btn" href="#products">Shop Now</a>
+<a href="#products" class="btn">Explore Now</a>
+</div>
 </section>
 
-<section class="section" id="categories">
-<h2>Categories</h2>
+<!-- CATEGORIES -->
+<section id="categories">
+<h2 class="title">Shop by <span>Categories</span></h2>
 
 <div class="grid">
 
@@ -157,8 +222,9 @@ color:#aaa;
 </div>
 </section>
 
-<section class="section" id="products">
-<h2>Trending Products</h2>
+<!-- PRODUCTS -->
+<section id="products">
+<h2 class="title">Trending <span>Products</span></h2>
 
 <div class="grid">
 
@@ -171,14 +237,14 @@ color:#aaa;
 
 <div class="card product">
 <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518">
-<h3>Fashion Top</h3>
+<h3>Stylish Top</h3>
 <div class="price">₹799</div>
 <a class="buy" href="#">Buy Now</a>
 </div>
 
 <div class="card product">
 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
-<h3>Stylish Dress</h3>
+<h3>Elegant Dress</h3>
 <div class="price">₹1499</div>
 <a class="buy" href="#">Buy Now</a>
 </div>
@@ -186,23 +252,24 @@ color:#aaa;
 </div>
 </section>
 
-<section class="section" id="blog">
-<h2>Blog</h2>
-<p>Coming soon: Fashion tips, trends, and product reviews for better SEO traffic.</p>
-</section>
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact <span>Us</span></h2>
+<p style="text-align:center;color:#aaa">
+Email: support@herstyle.com
+</p>
 
-<section class="section" id="contact">
-<h2>Contact</h2>
-<p>Email: support@herstyle.com</p>
-
-<small>
-Affiliate Disclosure: This website contains affiliate links. We may earn commission at no extra cost to you.
-</small>
+<p style="text-align:center;color:#666;margin-top:10px;font-size:12px">
+Affiliate Disclosure: This website contains affiliate links. We may earn commission.
+</p>
 </section>
 
 <footer>
 © 2026 HerStyle. All rights reserved.
 </footer>
+
+<!-- FLOAT BUTTON -->
+<a class="cta" href="#products">🔥 Shop Now</a>
 
 </body>
 </html>
