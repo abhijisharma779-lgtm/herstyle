@@ -3,55 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HerStyle | Fashion & Accessories</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>HerStyle Ultimate Buddy Edition</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0f0f13;color:white}
-header{position:fixed;top:0;width:100%;padding:20px 8%;display:flex;justify-content:space-between;background:rgba(0,0,0,.4);backdrop-filter:blur(15px)}
-.logo{font-size:32px;font-weight:700;color:#ff66c4}
-section{padding:90px 8%}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');background-size:cover}
-.title{text-align:center;font-size:42px;margin-bottom:50px}
-.title span{color:#ff66c4}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-.product{background:#171720;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
-.product img{width:100%;height:320px;object-fit:cover}
-.product-info{padding:20px}
-.price{color:#ff66c4;font-weight:700;margin:10px 0}
-.buy-btn{display:block;text-align:center;background:linear-gradient(45deg,#ff4fb3,#ff8bd6);padding:12px;border-radius:10px;color:#fff;text-decoration:none}
-footer{padding:40px;text-align:center}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f0f13;color:#fff}
+header{background:#111;padding:15px 8%;position:sticky;top:0;z-index:100}
+.logo{font-size:30px;font-weight:bold;color:#ff66c4}
+.hero{text-align:center;padding:70px 20px}
+.hero h1{font-size:48px}
+.hero span{color:#ff66c4}
+
+.search-container{position:relative;max-width:700px;margin:20px auto;height:180px}
+.search-box{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%}
+.search-box input{width:100%;padding:18px;border:none;border-radius:40px;font-size:16px}
+
+.buddy{position:absolute;font-size:64px;animation:orbit 8s linear infinite;z-index:10}
+@keyframes orbit{
+0%{left:0;top:0}
+25%{left:620px;top:0}
+50%{left:620px;top:110px}
+75%{left:0;top:110px}
+100%{left:0;top:0}
+}
+
+.bubble{max-width:600px;margin:10px auto;background:#1a1a24;padding:15px;border-radius:20px;text-align:center}
+.chips{text-align:center;margin:15px}
+.chip{display:inline-block;background:#222;padding:8px 14px;border-radius:20px;margin:5px;cursor:pointer}
+.surprise{display:block;margin:15px auto;padding:12px 20px;background:#ff66c4;color:#fff;border:none;border-radius:30px;cursor:pointer}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:40px 8%}
+.product{background:#181822;border-radius:18px;overflow:hidden}
+.product img{width:100%;height:240px;object-fit:cover}
+.product-info{padding:15px}
+.buy{display:block;text-align:center;background:#ff66c4;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin-top:10px}
+.highlight{outline:4px solid #ff66c4}
+.noresults{display:none;text-align:center;padding:25px;font-size:20px}
+footer{background:#111;padding:30px;text-align:center;color:#aaa}
 </style>
 </head>
 <body>
+
 <header><div class="logo">HerStyle</div></header>
 
-<section class="hero">
-<div>
-<h1>Everything She Needs</h1>
-<p>Fashion, Accessories, Electronics & More</p>
+<div class="hero">
+<h1>Style That Defines <span>You</span></h1>
+<p>Fashion • Lifestyle • Affiliate Deals</p>
 </div>
-</section>
 
-<section id="trending">
-<h2 class="title">Featured <span>Products</span></h2>
-<div class="products">
+<div class="search-container">
+<div id="buddy" class="buddy">🤖</div>
+<div class="search-box">
+<input id="searchInput" placeholder="Ask HerStyle Buddy...">
+</div>
+</div>
 
-<div class="product"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Women's Night Suit</h3><div class="price">Fashion Pick</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Nightsuit-Nightwear-Loungewear-Nightdress-ND-10-PINK-XL/dp/B0FNWRL2TC">Buy On Amazon</a></div></div>
+<div id="bubble" class="bubble">🤖 Hey! Search for bags, earbuds, kurta or decor.</div>
 
-<div class="product"><img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>boAt Airdopes Alpha</h3><div class="price">Wireless Earbuds</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/boAt-Airdopes-Alpha-Wireless-Earbuds/dp/B0C3ZYFZ77">Buy On Amazon</a></div></div>
+<div class="chips">
+<span class="chip" onclick="quickSearch('bag')">👜 Bags</span>
+<span class="chip" onclick="quickSearch('earbuds')">🎧 Earbuds</span>
+<span class="chip" onclick="quickSearch('kurta')">👗 Kurta</span>
+<span class="chip" onclick="quickSearch('decor')">🏠 Decor</span>
+</div>
 
-<div class="product"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>ZOUK Shoulder Bag</h3><div class="price">Trending Bag</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/ZOUK-Mandala-Handcrafted-Multicolor-Shoulder/dp/B0BQMVR9S1">Buy On Amazon</a></div></div>
+<button class="surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
 
-<div class="product"><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Decor Figurine</h3><div class="price">Home Decor</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/ARUNA-DECOR-Miniature-Girls-Figurine/dp/B0FYNT13ZH">Buy On Amazon</a></div></div>
+<div id="noresults" class="noresults">💀 I searched the whole fashion universe... nothing matched that vibe.</div>
 
-<div class="product"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Fastrack Shoulder Bag</h3><div class="price">Top Rated</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Fastrack-Black-Quilted-Shoulder-Women/dp/B0C89634LD">Buy On Amazon</a></div></div>
+<div class="products" id="products">
 
-<div class="product"><img src="https://images.unsplash.com/photo-1583391733956-6c77a4d55f26?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Women's Kurta Set</h3><div class="price">Latest Fashion</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Ichaa-Women-Rayon-Printed-Bottom/dp/B0DV5D3CWL">Buy On Amazon</a></div></div>
+<div class="product">
+<img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>Women's Night Suit</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/Nightsuit-Nightwear-Loungewear-Nightdress-ND-10-PINK-XL/dp/B0FNWRL2TC">Buy On Amazon</a></div></div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>boAt Airdopes Alpha Earbuds</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/boAt-Airdopes-Alpha-Wireless-Earbuds/dp/B0C3ZYFZ77">Buy On Amazon</a></div></div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>ZOUK Shoulder Bag</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/ZOUK-Mandala-Handcrafted-Multicolor-Shoulder/dp/B0BQMVR9S1">Buy On Amazon</a></div></div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>ARUNA Decor Figurine</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/ARUNA-DECOR-Miniature-Girls-Figurine/dp/B0FYNT13ZH">Buy On Amazon</a></div></div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>Fastrack Shoulder Bag</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/Fastrack-Black-Quilted-Shoulder-Women/dp/B0C89634LD">Buy On Amazon</a></div></div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1583391733956-6c77a4d55f26?auto=format&fit=crop&w=800&q=80">
+<div class="product-info"><h3>Ichaa Women's Kurta Set</h3>
+<a class="buy" target="_blank" href="https://www.amazon.in/Ichaa-Women-Rayon-Printed-Bottom/dp/B0DV5D3CWL">Buy On Amazon</a></div></div>
 
 </div>
-</section>
 
-<footer>© 2026 HerStyle</footer>
+<footer>
+<p>Affiliate Disclosure: We may earn a commission from qualifying purchases.</p>
+<p>Contact: abhijisharma779@gmail.com</p>
+<p>© 2026 HerStyle</p>
+</footer>
+
+<script>
+const input=document.getElementById('searchInput');
+const buddy=document.getElementById('buddy');
+const bubble=document.getElementById('bubble');
+const products=document.querySelectorAll('.product');
+const noresults=document.getElementById('noresults');
+
+function quickSearch(v){input.value=v;input.dispatchEvent(new Event('input'));}
+
+input.addEventListener('input',()=>{
+let v=input.value.toLowerCase();
+let found=0;
+
+if(v.includes('bag')){buddy.textContent='👜';bubble.textContent='Bag vibes detected!';}
+else if(v.includes('ear')){buddy.textContent='🎧';bubble.textContent='Music mode activated!';}
+else if(v.includes('kurta')){buddy.textContent='✨';bubble.textContent='Traditional style unlocked!';}
+else if(v.includes('night')){buddy.textContent='😴';bubble.textContent='Comfort mode activated!';}
+else if(v.includes('decor')){buddy.textContent='🏠';bubble.textContent='Making your room prettier!';}
+else {buddy.textContent='👀';bubble.textContent='Searching the fashion universe...';}
+
+products.forEach(p=>{
+if(p.innerText.toLowerCase().includes(v)){p.style.display='block';found++;}
+else{p.style.display='none';}
+});
+
+if(found===0 && v!==""){noresults.style.display='block';buddy.textContent='💀';}
+else{noresults.style.display='none';}
+});
+
+function surpriseMe(){
+products.forEach(p=>p.classList.remove('highlight'));
+const item=products[Math.floor(Math.random()*products.length)];
+item.classList.add('highlight');
+item.scrollIntoView({behavior:'smooth',block:'center'});
+bubble.textContent='🎲 Buddy found a surprise pick for you!';
+buddy.textContent='🎉';
+}
+</script>
+
 </body>
 </html>
