@@ -3,273 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HerStyle | Premium Fashion Store</title>
-
+<title>HerStyle | Fashion & Accessories</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
-
-body{
-background:#0b0b10;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAV */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 8%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:18px;
-font-size:14px;
-opacity:0.8;
-}
-
-nav a:hover{
-opacity:1;
-color:#ff4fb3;
-}
-
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:0 20px;
-background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-}
-
-.hero h1{
-font-size:60px;
-line-height:1.1;
-}
-
-.hero span{
-color:#ff4fb3;
-}
-
-.hero p{
-margin-top:15px;
-color:#ccc;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 30px;
-border-radius:30px;
-background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
-color:white;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* SECTIONS */
-section{
-padding:80px 8%;
-}
-
-.title{
-text-align:center;
-font-size:38px;
-margin-bottom:40px;
-}
-
-.title span{
-color:#ff4fb3;
-}
-
-/* CATEGORY */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.card{
-background:#151520;
-padding:20px;
-border-radius:15px;
-text-align:center;
-transition:0.3s;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#ff4fb3;
-}
-
-/* PRODUCT */
-.product img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.price{
-color:#ff4fb3;
-font-weight:700;
-margin:10px 0;
-}
-
-.buy{
-display:block;
-padding:10px;
-text-align:center;
-background:linear-gradient(45deg,#ff4fb3,#ff8bd6);
-color:white;
-text-decoration:none;
-border-radius:10px;
-}
-
-/* FLOAT CTA */
-.cta{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#ff4fb3;
-padding:15px 18px;
-border-radius:50px;
-box-shadow:0 10px 30px rgba(255,79,179,0.4);
-font-size:14px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-background:#000;
-color:#777;
-font-size:13px;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0f0f13;color:white}
+header{position:fixed;top:0;width:100%;padding:20px 8%;display:flex;justify-content:space-between;background:rgba(0,0,0,.4);backdrop-filter:blur(15px)}
+.logo{font-size:32px;font-weight:700;color:#ff66c4}
+section{padding:90px 8%}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');background-size:cover}
+.title{text-align:center;font-size:42px;margin-bottom:50px}
+.title span{color:#ff66c4}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.product{background:#171720;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+.product img{width:100%;height:320px;object-fit:cover}
+.product-info{padding:20px}
+.price{color:#ff66c4;font-weight:700;margin:10px 0}
+.buy-btn{display:block;text-align:center;background:linear-gradient(45deg,#ff4fb3,#ff8bd6);padding:12px;border-radius:10px;color:#fff;text-decoration:none}
+footer{padding:40px;text-align:center}
 </style>
 </head>
-
 <body>
+<header><div class="logo">HerStyle</div></header>
 
-<header>
-<div class="logo">HerStyle</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#categories">Categories</a>
-<a href="#products">Trending</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
 <div>
-<h1>Style That Defines <span>You</span></h1>
-<p>Fashion • Beauty • Accessories • Lifestyle</p>
-<a href="#products" class="btn">Explore Now</a>
+<h1>Everything She Needs</h1>
+<p>Fashion, Accessories, Electronics & More</p>
 </div>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
-<h2 class="title">Shop by <span>Categories</span></h2>
+<section id="trending">
+<h2 class="title">Featured <span>Products</span></h2>
+<div class="products">
 
-<div class="grid">
+<div class="product"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Women's Night Suit</h3><div class="price">Fashion Pick</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Nightsuit-Nightwear-Loungewear-Nightdress-ND-10-PINK-XL/dp/B0FNWRL2TC">Buy On Amazon</a></div></div>
 
-<div class="card">👗 Dresses</div>
-<div class="card">👜 Bags</div>
-<div class="card">💄 Makeup</div>
-<div class="card">👠 Footwear</div>
-<div class="card">💍 Jewelry</div>
-<div class="card">⌚ Watches</div>
+<div class="product"><img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>boAt Airdopes Alpha</h3><div class="price">Wireless Earbuds</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/boAt-Airdopes-Alpha-Wireless-Earbuds/dp/B0C3ZYFZ77">Buy On Amazon</a></div></div>
 
-</div>
-</section>
+<div class="product"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>ZOUK Shoulder Bag</h3><div class="price">Trending Bag</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/ZOUK-Mandala-Handcrafted-Multicolor-Shoulder/dp/B0BQMVR9S1">Buy On Amazon</a></div></div>
 
-<!-- PRODUCTS -->
-<section id="products">
-<h2 class="title">Trending <span>Products</span></h2>
+<div class="product"><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Decor Figurine</h3><div class="price">Home Decor</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/ARUNA-DECOR-Miniature-Girls-Figurine/dp/B0FYNT13ZH">Buy On Amazon</a></div></div>
 
-<div class="grid">
+<div class="product"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Fastrack Shoulder Bag</h3><div class="price">Top Rated</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Fastrack-Black-Quilted-Shoulder-Women/dp/B0C89634LD">Buy On Amazon</a></div></div>
 
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
-<h3>Luxury Handbag</h3>
-<div class="price">₹1299</div>
-<a class="buy" href="#">Buy Now</a>
-</div>
-
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518">
-<h3>Stylish Top</h3>
-<div class="price">₹799</div>
-<a class="buy" href="#">Buy Now</a>
-</div>
-
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
-<h3>Elegant Dress</h3>
-<div class="price">₹1499</div>
-<a class="buy" href="#">Buy Now</a>
-</div>
+<div class="product"><img src="https://images.unsplash.com/photo-1583391733956-6c77a4d55f26?auto=format&fit=crop&w=800&q=80"><div class="product-info"><h3>Women's Kurta Set</h3><div class="price">Latest Fashion</div><a class="buy-btn" target="_blank" href="https://www.amazon.in/Ichaa-Women-Rayon-Printed-Bottom/dp/B0DV5D3CWL">Buy On Amazon</a></div></div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="title">Contact <span>Us</span></h2>
-<p style="text-align:center;color:#aaa">
-Email: support@herstyle.com
-</p>
-
-<p style="text-align:center;color:#666;margin-top:10px;font-size:12px">
-Affiliate Disclosure: This website contains affiliate links. We may earn commission.
-</p>
-</section>
-
-<footer>
-© 2026 HerStyle. All rights reserved.
-</footer>
-
-<!-- FLOAT BUTTON -->
-<a class="cta" href="#products">🔥 Shop Now</a>
-
+<footer>© 2026 HerStyle</footer>
 </body>
 </html>
